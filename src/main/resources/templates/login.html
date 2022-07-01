@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+  <head>
+  
+    <title>Login</title>
+    <script type="text/javascript">
+    
+    	var name = 'Trevor Page'
+    	var age = 37
+    	alert('Hello World! My name is ' + name +  ' and I am ' + age + ' years old')
+    	alert(`Hello world! My name is ${name} and I am ${age} years old`)
+    	
+    	var car 
+    	var tesla = null
+    	
+    	// Data types
+    	console.log(`The value of 'car' is: ${car}, the data type is ${typeof car}`) // should be undefined
+    	console.log(`The value of 'tesla' is: ${tesla}, the data type is ${typeof tesla}`) // should be null
+    	console.log(`The value of 'age' is: ${age}, the data type is ${typeof age}`)
+    	console.log(`The value of 'name' is: ${name}, the data type is ${typeof name}`)
+    	console.log(`What is 5 + 10 = ${5+10}`)
+    	var addition = 5 + 15
+    	console.log(`addition = ${addition}`)
+    	// Arrays
+    	var person = {
+    			'firstName': 'Trevor',
+    			'lastName': 'Page',
+    			'age': 37,
+    			'address': {
+    				'line1': '123 Fake st',
+    				'line2': 'Unit 45',
+    				'city': 'Toronto',
+    				'prov': 'Ontario'
+    			}
+    	}
+    	console.log(`The value of 'person' is: ${person}, the data type is ${typeof person}} `)
+    	console.log(person)
+    	
+    	var submitBtn = document.querySelector("#submitBtn")
+    	console.log(`submitBtn is: ${submitBtn}`)
+    	// Document Object Model -> DOM
+    	// Project Object Model -> POM normally used with maven
+    </script>
+  </head>
+  <body>
+     <h1>Login Below</h1>
+     <form >
+       <div>
+            Username: <input type="text" th:field="${user.username}"/>
+       </div>
+       <div>
+            Password: <input type="password" th:field="${user.password}"/>
+       </div>
+       <div>
+       <button type="button" id="submitBtn">Submit</button>
+       <script type="text/javascript">
+         var submitBtn = document.querySelector("#submitBtn")
+         console.log(`submitBtn is: `)
+         console.log(submitBtn)
+         submitBtn.addEventListener('click', submitBtnClick)
+       	 submitBtn.addEventListener('mouseover', function() {
+       		 alert(`Hey I\'ve been moused overed!`)
+       	 })
+         
+       	 // This is literally just letting you know in the console log that it's being used
+       	 var usernameTextBox = document.querySelector("#username")
+       	 usernameTextBox.addEventListener('focus', function() {
+       		 console.log("The username textbox now has focus")
+       	 })
+         
+       	 var passwordTextBox = document.querySelector("#password")
+       	 passwordTextBox.addEventListener('focus', () =>
+       		 console.log("The password textbox now has focus")
+       	 )
+       	 
+         // public void myMethod () {}
+         //
+         function submitBtnClick() {
+        	 alert('Hey I\'ve been clicked')
+        	 // you could also just use double quotes to escape the error instead of a forward slash
+         }
+       </script>
+       <button type="button" id="goBackBtn">Go Back</button>
+       </div>
+     </form>
+  </body>
+</html>
